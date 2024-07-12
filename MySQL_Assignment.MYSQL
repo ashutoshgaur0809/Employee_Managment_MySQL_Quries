@@ -1,0 +1,85 @@
+Amswers 
+
+A1 - 
+create database sqlAssignment;
+
+A1 -
+CREATE TABLE employees ( EMPLOYEE_ID INT NOT NULL UNIQUE AUTO_INCREMENT, FIRST_NAME varchar(100) NOT NULL, LAST_NAME varchar(100) NOT NULL, EMAIL varchar(100), PHONE_NUMBER varchar(100), HIRE_DATE date, JOB_ID varchar(100) , SALARY decimal(10,2), COMMISSION_PCT decimal(10,2), MANAGER_ID int , DEPARTMENT_ID int)
+
+A2 -
+CREATE TABLE employees ( EMPLOYEE_ID INT NOT NULL UNIQUE AUTO_INCREMENT, FIRST_NAME varchar(100) NOT NULL, LAST_NAME varchar(100) NOT NULL, EMAIL varchar(100), PHONE_NUMBER varchar(100), HIRE_DATE date, JOB_ID varchar(100) , SALARY decimal(10,2), COMMISSION_PCT decimal(10,2), MANAGER_ID int , DEPARTMENT_ID int)
+
+A3 - 
+Alter table employees add column new_col int default null;
+
+A4 - 
+select MAX(SALARY) as MAX_salary from employees -> 30000
+select min(salary) as mini_salary from employees -> 4800
+select * from employees where SALARY > 25000  
+
+A5 -
+INSERT into employees(EMPLOYEE_ID,FIRST_NAME,LAST_NAME,EMAIL,PHONE_NUMBER,HIRE_DATE,JOB_ID,SALARY,COMMISSION_PCT,MANAGER_ID,DEPARTMENT_ID,new_col) VALUES (109,"Ram","Singh","Ram@","9829281468","2024-11-07","HR",35200,0.00,95,60,null)
+
+A6 -
+INSERT into employees(EMPLOYEE_ID,FIRST_NAME,LAST_NAME,EMAIL,PHONE_NUMBER,HIRE_DATE,JOB_ID,SALARY,COMMISSION_PCT,MANAGER_ID,DEPARTMENT_ID,new_col) VALUES (110,"a1","g1","Ram@123",null,null,"HR",null,null,null,null,null);
+
+A7- 
+CREATE TABLE emp_new AS SELECT * FROM employees
+
+A8- 
+INSERT into employees(EMPLOYEE_ID,FIRST_NAME,LAST_NAME,EMAIL,PHONE_NUMBER,HIRE_DATE,JOB_ID,SALARY,COMMISSION_PCT,MANAGER_ID,DEPARTMENT_ID,new_col) VALUES (111,"a1","g1","Ram@123",null,"2020-11-26","Admin",15000,0.00,11,10,null);
+
+A9-
+INSERT into employees(EMPLOYEE_ID,FIRST_NAME,LAST_NAME,EMAIL,PHONE_NUMBER,HIRE_DATE,JOB_ID,SALARY,COMMISSION_PCT,MANAGER_ID,DEPARTMENT_ID,new_col) VALUES (112,"a2","g2","Ram@123","70147","2020-11-26","Admin",15000,0.00,11,10,null),(113,"a2","g2","Ram@123","70147","2020-11-26","Admin",15000,0.00,11,10,null),(114,"a2","g2","Ram@123","70147","2020-11-26","Admin",15000,0.00,11,10,null)
+
+A10-
+INSERT into employees SELECT * from emp_new;
+
+
+A11-
+update employees SET EMAIL = "not applicable";
+
+A12-
+update employees SALARY set SALARY = 8000 where EMPLOYEE_ID=105 and SALARY < 5000
+
+A13-
+alter TABLE employees RENAME TO employees_new_one;
+
+A14-
+alter TABLE employees_new_one ADD COLUMN reigon_id int
+
+A15-
+ALTER TABLE employees_new_one ADD COLUMN id INT after EMPLOYEE_ID
+
+A16-
+alter TABLE employees_new_one DROP COLUMN new_col
+
+A17-
+ALTER TABLE employees_new_one MODIFY COLUMN JOB_ID text
+
+A18-
+SELECt concat(FIRST_NAME,space(1),LAST_NAME) as FULL_Name FROM employees_new_one
+
+A19-
+SELECT DISTINCT(DEPARTMENT_ID) from employees_new_one	
+
+A20-
+alter table update employees_new_one add coumn PF int;
+update employees_new_one PF set PF = SALARY * 0.15;
+select (first_name, last_name), salary, PF from employees_new_one;
+
+A21-
+select MAX(SALARY) as MAX_salary from employees -> 30000
+select min(salary) as mini_salary from employees -> 4800
+
+A22-
+select Upper(FIRST_NAME) from employees_new_one
+
+A23-
+SELECT count(DISTINCT(JOB_ID)) from employees_new_one
+
+A24-
+SELECt concat(FIRST_NAME,LAST_NAME) as FULL_Name FROM employees_new_one
+
+A25-
+SELECt substring(FIRST_NAME,1,3) from employees_new_one
